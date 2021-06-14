@@ -5,7 +5,8 @@
  */
 package lab.exercise.pkg2;
 
-import com.sun.xml.internal.ws.util.StringUtils;
+import java.util.function.Function;
+
 
 /**
  *
@@ -18,15 +19,27 @@ public class LabExercise2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String string1="";
-        String string2="2";
+        String string1="Ahmed";
+        String string2="Mohamed";
         
-        bString x = null ;
-//        String s = x.betterString("sss", "q",(on,tw) ->  {
-//            return on.compareTo(tw)>0 ? true : false;
-//        } );
+        String x = BString_.CheckbetterString(string1,string2,(s1,s2) -> s1.length()>s2.length()); 
+//        System.out.println(x);
+        
 
-        System.out.println("");
+
+// check whether a string contains only alphabets
+        String str2="Mohamed2";
+
+        Function<String,Boolean> CheckCharFunc;
+        CheckCharFunc = Str->{
+                for (int i = 0; i < Str.length(); i++) 
+                            if ((Character.isLetter(Str.charAt(i)) == false)) 
+                                return false;   
+                              
+                            return true;   
+                        };
+        System.out.println(CheckCharFunc.apply(str2));
+
     }
     
     
